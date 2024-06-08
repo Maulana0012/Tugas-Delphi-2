@@ -39,16 +39,22 @@ uses Unit2;
 
 procedure TForm3.btn1Click(Sender: TObject);
 begin
-DataModule2.zqrykategori.SQL.Clear;
-DataModule2.zqrykategori.SQL.Add('Insert into kategori values(null,"' + Edit1.Text + '")');
-DataModule2.zqrykategori.ExecSQL;
+if Edit1.Text <> '' then
+begin
+    DataModule2.zqrykategori.SQL.Clear;
+    DataModule2.zqrykategori.SQL.Add('Insert into kategori values(null,"' + Edit1.Text + '")');
+    DataModule2.zqrykategori.ExecSQL;
 
-DataModule2.zqrykategori.SQL.Clear;
-DataModule2.zqrykategori.SQL.Add('select * from kategori');
-DataModule2.zqrykategori.Open;
-ShowMessage('Data berhasil disimpan');
+    DataModule2.zqrykategori.SQL.Clear;
+    DataModule2.zqrykategori.SQL.Add('select * from kategori');
+    DataModule2.zqrykategori.Open;
+    ShowMessage('Data berhasil disimpan');
+end
+else
+  begin
+    Edit1.Text := '';
+  end
 end;
-
 procedure TForm3.btn2Click(Sender: TObject);
 begin
 DataModule2.zqrykategori.SQL.Clear;
