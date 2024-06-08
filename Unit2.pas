@@ -11,6 +11,15 @@ type
     con1: TZConnection;
     zqrykategori: TZQuery;
     dskategori: TDataSource;
+    con2: TZConnection;
+    zqrySatuan: TZQuery;
+    dsSatuan: TDataSource;
+    con3: TZConnection;
+    zqrySupplier: TZQuery;
+    dsSupplier: TDataSource;
+    con4: TZConnection;
+    zqryKustomer: TZQuery;
+    dsKustomer: TDataSource;
   private
     { Private declarations }
   public
